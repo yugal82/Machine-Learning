@@ -1,0 +1,22 @@
+What is Machine Learning?
+Machine learning is a subset of artificial intelligence (AI) that focuses on the development of algorithms and statistical models that enable computers to learn and improve their performance on a specific task without being explicitly programmed for that task. The core idea behind machine learning is to enable computers to identify patterns, make decisions, and generate insights from data, similar to how humans learn from experience.
+
+Machine learning can be categorized into three main types:
+    1. Supervised Learning: In this type, the model is trained on labeled data, where the correct output is provided for each input example. The goal is for the model to learn a mapping from input to output, allowing it to predict correct labels for new, unseen data.
+
+    2. Unsupervised Learning: Here, the model is trained on unlabeled data, and the aim is to discover patterns, structures, or relationships within the data without specific guidance. Clustering and dimensionality reduction are common tasks in unsupervised learning.
+
+    3. Reinforcement Learning: In this paradigm, the model interacts with an environment and learns by receiving feedback in the form of rewards or penalties based on its actions. The objective is for the model to learn to take actions that maximize cumulative rewards over time.
+
+There are majorly 3 stpes in Machine Learning:
+    1. Data Preprocessing
+        - Import the data
+        - Clean the data
+        - Split into training and test sets
+    2. Modelling
+        - Build the model
+        - Train the model
+        - Make predictions
+    3. Evaluation
+        - Calculate performance measures
+        - Make a verdict
