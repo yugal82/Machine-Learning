@@ -20,3 +20,7 @@ There are majorly 3 stpes in Machine Learning:
     3. Evaluation
         - Calculate performance measures
         - Make a verdict
+
+
+Question: Do we have to apply Feature scaling before splitting the dataset or after splitting?
+Answer: We have to apply feature scaling after splitting the datasets into training and testing sets because whenever you'll build a model, you will build it on training set and will evalute it using testing set. Testing set consists of data which the model has never seen before. When applying feature scaling, we have to evaluate the mean and the standard deviation of the data set, which will include data of the testing set as well if we perform Feature scaling before splitting. This also can cause INFORMATION LEAKAGE. To avoid this we perform feature scaling after splitting.
