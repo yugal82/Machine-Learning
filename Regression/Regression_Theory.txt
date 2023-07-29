@@ -1,0 +1,20 @@
+Question: What is regression in machine learning?
+Answer: In machine learning, regression is a type of supervised learning algorithm used for predicting continuous numerical values based on input data. The goal of regression is to establish a relationship between the input features and the output variable, enabling the algorithm to make accurate predictions on new, unseen data.
+ In a regression problem, the algorithm is trained on a labeled dataset, where each data point consists of input features (independent variables) and their corresponding target values (dependent variable). The algorithm learns from this data and tries to find the best-fitting line or curve that represents the relationship between the input features and the target variable.
+Regression technique vary from Linear Regression to SVR and Random Forests Regression.
+Types of Machine Learning Regression models
+1. Simple Linear Regression
+2. Multiple Linear Regression
+3. Polynomial Regression
+4. Support Vector for Regression (SVR)
+5. Decision Tree Regression
+6. Random Forest Regression
+
+
+1. Simple Linear Regression:
+      Equation: y = b0 + b1x1
+ where y ---> independent variable
+      x1 ---> dependent variable
+      b0 ---> y-intercept
+      b1 ---> slope
+
