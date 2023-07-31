@@ -1,5 +1,5 @@
-Question: What is regression in machine learning?
-Answer: In machine learning, regression is a type of supervised learning algorithm used for predicting continuous numerical values based on input data. The goal of regression is to establish a relationship between the input features and the output variable, enabling the algorithm to make accurate predictions on new, unseen data.
+**Question**: What is regression in machine learning?
+**Answer**: In machine learning, regression is a type of supervised learning algorithm used for predicting continuous numerical values based on input data. The goal of regression is to establish a relationship between the input features and the output variable, enabling the algorithm to make accurate predictions on new, unseen data.
  In a regression problem, the algorithm is trained on a labeled dataset, where each data point consists of input features (independent variables) and their corresponding target values (dependent variable). The algorithm learns from this data and tries to find the best-fitting line or curve that represents the relationship between the input features and the target variable.
 Regression technique vary from Linear Regression to SVR and Random Forests Regression.
 Types of Machine Learning Regression models
@@ -10,23 +10,22 @@ Types of Machine Learning Regression models
 5. Decision Tree Regression
 6. Random Forest Regression
 
-
-1. Simple Linear Regression:
-      Equation: y = b0 + b1x1
+**1. Simple Linear Regression:**
+      *Equation*: y = b0 + b1x1
  where y ---> independent variable
       x1 ---> dependent variable
       b0 ---> y-intercept
       b1 ---> slope
 
-Assumptions of Linear Regression:
-     i. Linearity - Linear Regression assumes that there is a linear relationship between independent variable Y and dependent variables X.
-    ii. Homoscedasticity - Equal variance.
-   iii. Multivariate Normality - Normality of error distribution.
-    iv. Independence for observations - Includes 'no autocorrelation'.
-     v. Lack of Multicollinearity - Predictors are not correlated to each other.
+*Assumptions of Linear Regression*:
+     i. **Linearity** - Linear Regression assumes that there is a linear relationship between independent variable Y and dependent variables X.
+    ii. **Homoscedasticity** - Equal variance.
+   iii. **Multivariate Normality** - Normality of error distribution.
+    iv. **Independence for observations** - Includes 'no autocorrelation'.
+     v. **Lack of Multicollinearity** - Predictors are not correlated to each other.
 
-2. Multiple Linear Regression
-     Equation: y = b0 + b1x1 + b2x2 + ... + bnxn
+**2. Multiple Linear Regression**
+     *Equation*: y = b0 + b1x1 + b2x2 + ... + bnxn
  where y ---> independent variable
       x1, x2, ... , xn ---> dependent variable
                     b0 ---> y-intercept
@@ -35,7 +34,7 @@ Assumptions of Linear Regression:
 Which variables(features) should be considered while building a Multiple Regression?
 -> Since there are multiple independent variables which predict the dependent variable, it is necessary to filter out the features IF all the features are not important. To filter this, there are methods to achieve so:
 
-     1. Backward elimination:
+      1. Backward elimination:
           Step i: Select a significance level to stay in the model (alpha = 0.05 or 5%)
          Step ii: Fit the full model with all possible predictors
         Step iii: Consider the predictor with the highest P-Values.
@@ -63,9 +62,9 @@ Which variables(features) should be considered while building a Multiple Regress
 
      THE MOST EFFICIENT METHOD IS THE BACKWARD ELIMINATION METHOD.
      
-3. Polynomial Linear Regression:
+**1. Polynomial Linear Regression:**
      Polynomial regression is a type of regression analysis used in machine learning, particularly in situations where the relationship between the independent variable(s) (input features) and the dependent variable (output) is nonlinear. In polynomial regression, instead of fitting a straight line to the data (as in simple linear regression), the algorithm fits a polynomial function to capture more complex patterns in the data.
-     Equation: y = b0 + b1x1 + b2x1^2 + ... + bnx1^n
+     *Equation*: y = b0 + b1x1 + b2x1^2 + ... + bnx1^n
  where y ---> independent variable
       x1 ---> dependent variable
       b0 ---> y-intercept
