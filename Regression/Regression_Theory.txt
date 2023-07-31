@@ -13,8 +13,8 @@ Types of Machine Learning Regression models
 
 1. Simple Linear Regression:
       Equation: y = b0 + b1x1
- where y ---> independent variable
-      x1 ---> dependent variable
+ where y ---> dependent variable
+      x1 ---> independent variable
       b0 ---> y-intercept
       b1 ---> slope
 
@@ -27,8 +27,8 @@ Assumptions of Linear Regression:
 
 2. Multiple Linear Regression
      Equation: y = b0 + b1x1 + b2x2 + ... + bnxn
- where y ---> independent variable
-      x1, x2, ... , xn ---> dependent variable
+ where y ---> dependent variable
+      x1, x2, ... , xn ---> independent variable
                     b0 ---> y-intercept
       b1, b2, ... , bn  ---> slope
 
@@ -66,7 +66,7 @@ Which variables(features) should be considered while building a Multiple Regress
 3. Polynomial Linear Regression:
      Polynomial regression is a type of regression analysis used in machine learning, particularly in situations where the relationship between the independent variable(s) (input features) and the dependent variable (output) is nonlinear. In polynomial regression, instead of fitting a straight line to the data (as in simple linear regression), the algorithm fits a polynomial function to capture more complex patterns in the data.
      Equation: y = b0 + b1x1 + b2x1^2 + ... + bnx1^n
- where y ---> independent variable
-      x1 ---> dependent variable
+ where y ---> dependent variable
+      x1 ---> independent variable
       b0 ---> y-intercept
       b1, b2, ... , bn  ---> slope
