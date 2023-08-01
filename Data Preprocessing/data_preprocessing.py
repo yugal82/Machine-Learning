@@ -39,8 +39,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 # Types for feature scaling: 1. Standardization (values between -3 and +3)
 #                            2. Noramlization (values between 0, 1)
 
-# Normalization is recemmended when data is normally distributed
-# Generally Standardization works better all the time.
+# Standardization is recemmended when data is normally distributed
+# Generally Normalization works better all the time.
 
 scaler = StandardScaler()
 X_train[:, 3:] = scaler.fit_transform(X_train[:, 3:])
