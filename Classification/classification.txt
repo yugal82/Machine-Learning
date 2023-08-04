@@ -1,0 +1,25 @@
+What is Classification?
+    In machine learning, classification is a type of supervised learning task where the goal is to predict the category or class label of an input data point based on its features (attributes). The input data consists of labeled examples, where each example is associated with a class label indicating its category.
+    Classification is widely used in various real-world applications, including spam email detection, sentiment analysis, image recognition, medical diagnosis, fraud detection, and many other scenarios where we need to categorize data into distinct classes or groups. 
+
+Many different algorithms are available for classification tasks, such as:
+1. logistic regression 
+2. support vector machines (SVM)
+3. decision trees 
+4. random forests
+5. naive Bayes 
+6. k-nearest neighbors (KNN)
+7. neural networks
+
+The choice of the algorithm depends on the complexity of the problem and the characteristics of the data.
+
+
+What is Logistic regression?
+    Logistic regression is a supervised learning algorithm used for binary classification tasks in machine learning. Despite its name, logistic regression is primarily used for classification, not regression. It is widely used to predict a binary outcome, where the dependent variable (target) takes only two possible classes, typically represented as 0 and 1.
+    The goal of logistic regression is to find the best-fitting S-shaped curve (sigmoid function) that maps the input features to the probability of the positive class (class 1). The output of the logistic regression model is a probability score between 0 and 1, which can be interpreted as the likelihood of the data point belonging to the positive class.
+
+    To find the best fit line to classify each feature correctly, we use Sigmoid Function (S-shaped curve).
+    The Sigmoid Function is given by:
+       ----------------------    
+       | z = 1 / (1 + e^-z) |   where e --> Euler's Constant (2.718)
+       ----------------------
