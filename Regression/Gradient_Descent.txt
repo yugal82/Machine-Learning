@@ -1,0 +1,10 @@
+What is Gradient Descent?
+Gradient descent is an optimization algorithm commonly used in machine learning to minimize the ERROR or COST FUNCTION of a model. It is a first-order iterative optimization algorithm that aims to find the minimum of a function by iteratively updating the model's parameters in the direction of the steepest descent of the cost function.
+
+There are different variants of gradient descent, including:
+1. Batch Gradient Descent: 
+    The entire training dataset is used to compute the gradient and update the parameters in each iteration. It can be computationally expensive for large datasets.
+2. Stochastic Gradient Descent (SGD): 
+    Only one training example is used to compute the gradient and update the parameters in each iteration. It is computationally less expensive but introduces more variance in the parameter updates.
+3. Mini-Batch Gradient Descent: 
+    It is a compromise between batch gradient descent and SGD, where a mini-batch of data points is used to compute the gradient and update the parameters.
