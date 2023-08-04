@@ -23,3 +23,10 @@ What is Logistic regression?
        ----------------------    
        | z = 1 / (1 + e^-z) |   where e --> Euler's Constant (2.718)
        ----------------------
+
+
+What is Decision Tree in ML?
+    A decision tree is a popular supervised learning algorithm used for both classification and regression tasks in machine learning. It is a tree-like model that makes decisions based on a series of rules and conditions derived from the features of the input data.
+    In a decision tree, each internal node represents a decision based on a specific feature, each branch represents the outcome of that decision, and each leaf node represents a class label (in classification) or a predicted value (in regression).
+    Decision trees are favored for their simplicity, interpretability, and ability to handle both numerical and categorical data. They can capture complex relationships between features and the target variable, making them useful for both linearly and nonlinearly separable data.
+    However, decision trees may suffer from overfitting, especially if they are allowed to grow too deep or are not pruned effectively. To address this issue, ensemble methods like random forests and gradient boosting are often used, which combine multiple decision trees to improve predictive performance and reduce overfitting.
