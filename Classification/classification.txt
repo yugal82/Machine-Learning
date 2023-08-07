@@ -30,3 +30,8 @@ What is Decision Tree in ML?
     In a decision tree, each internal node represents a decision based on a specific feature, each branch represents the outcome of that decision, and each leaf node represents a class label (in classification) or a predicted value (in regression).
     Decision trees are favored for their simplicity, interpretability, and ability to handle both numerical and categorical data. They can capture complex relationships between features and the target variable, making them useful for both linearly and nonlinearly separable data.
     However, decision trees may suffer from overfitting, especially if they are allowed to grow too deep or are not pruned effectively. To address this issue, ensemble methods like random forests and gradient boosting are often used, which combine multiple decision trees to improve predictive performance and reduce overfitting.
+
+
+What is Support Vector Machine in ML?
+    A Support Vector Machine (SVM) is a powerful and versatile supervised learning algorithm used for both classification and regression tasks in machine learning. SVMs are particularly effective in situations where the data is not linearly separable, as they can capture complex relationships between features and target variables by mapping the data into a higher-dimensional space.
+    In a classification context, SVMs work by finding a hyperplane that best separates different classes of data points in the feature space. The hyperplane is chosen so that it MAXIMIZES the margin—the distance between the hyperplane and the nearest data points of each class. These nearest data points are called support vectors, hence the name "Support Vector Machine."
