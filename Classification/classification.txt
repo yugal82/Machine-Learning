@@ -35,3 +35,9 @@ What is Decision Tree in ML?
 What is Support Vector Machine in ML?
     A Support Vector Machine (SVM) is a powerful and versatile supervised learning algorithm used for both classification and regression tasks in machine learning. SVMs are particularly effective in situations where the data is not linearly separable, as they can capture complex relationships between features and target variables by mapping the data into a higher-dimensional space.
     In a classification context, SVMs work by finding a hyperplane that best separates different classes of data points in the feature space. The hyperplane is chosen so that it MAXIMIZES the margin—the distance between the hyperplane and the nearest data points of each class. These nearest data points are called support vectors, hence the name "Support Vector Machine."
+
+
+What is Naive Bayes Classification?
+    Naive Bayes classification is a probabilistic machine learning algorithm used for classifying data into categories based on the features present in the data. Despite its seemingly "naive" assumptions, it can be surprisingly effective in many real-world applications, such as spam email detection, sentiment analysis, and document categorization.
+    Naive Bayes is based on Bayes' theorem, which calculates the probability of a particular event occurring given prior knowledge of related events. In the context of classification, Bayes' theorem calculates the probability of a particular class label given the observed features.
+    The "naive" assumption in Naive Bayes is that the features are conditionally independent, meaning that the presence or absence of one feature does not affect the presence or absence of other features, given the class label. This assumption simplifies the calculations and makes the algorithm computationally efficient.
