@@ -2,6 +2,12 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression, Lasso
+from sklearn.model_selection import ShuffleSplit
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeRegressor
+
 
 data_set = pd.read_csv('Datasets/Bengaluru_House_Data.csv')
 
@@ -98,7 +104,7 @@ data_set_3['location'] = data_set_3['location'].apply(lambda x: 'Other' if x in 
 # NOW LETS DETECT THE OUTLIERS AND REMOVE THEM
 # -----------------------------------------------------------------------------
 
-data_set_3['BHK'] = data_set_3['BHK'].astype(float)
+data_set_3['BHK'] = data_set_3['BHK'].astype(int)
 
 # print(data_set_3[data_set_3['total_sqft']/data_set_3['BHK'] < 300].head())
 # output ->                location  total_sqft  bath  price  BHK  price_per_sqft
@@ -152,3 +158,104 @@ df4 = remove_per_sq_ft_outliers(data_set_3)
 # 5850          Other     11338.0   9.0  1000.0  6.0     8819.897689
 
 df4 = df4[df4.bath < df4.BHK+2]
+
+
+# Now the 'location' column is in string format, but ML model expects data to be numerical. So we need to convert it to numerical values. As it is a categorical column, we will use One Hot Encoding.
+
+dummies = pd.get_dummies(df4['location'], dtype=int)
+# we created a new data frame for dummies and we will append this data frame to the original data frame 'df5'
+
+df5 = pd.concat([df4, dummies.drop('Other', axis='columns')], axis='columns')
+df5 = df5.drop('location', axis='columns')
+
+df5 = df5.drop('price_per_sqft', axis='columns')
+
+# X and y are independent and dependent variables respectively.
+X = df5.drop(['price'], axis='columns')
+y = df5.price
+
+# print(X.head())
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# print(X_train.shape)
+# print(X_test.shape)
+# print(y_train.shape)
+# print(y_test.shape)
+
+model = LinearRegression()
+model.fit(X_train, y_train)
+# print(model.score(X_test, y_test))
+
+cv = ShuffleSplit(n_splits=5, test_size=0.2, random_state=0)
+# print(cross_val_score(model, X, y, cv=cv))
+
+
+def find_best_model(X, y):
+    algo = {
+        'linear_regression' : {
+            'model': LinearRegression(),
+            'params': {
+                'normalize': [True, False]
+            }
+        },
+        'lasso': {
+            'model': Lasso(),
+            'params': {
+                'alpha': [1,2],
+                'selection': ['random', 'cyclic']
+            }
+        },
+        'decision_tree': {
+            'model': DecisionTreeRegressor(),
+            'params': {
+                'criterion' : ['mse','friedman_mse'],
+                'splitter': ['best','random']
+            }
+        }
+    }
+    scores = []
+    cv = ShuffleSplit(n_splits=5, test_size=0.2, random_state=0)
+    for algo_name, config in algo.items():
+        gs =  GridSearchCV(config['model'], config['params'], cv=cv, return_train_score=False)
+        gs.fit(X,y)
+        scores.append({
+            'model': algo_name,
+            'best_score': gs.best_score_,
+            'best_params': gs.best_params_
+        })
+
+    return pd.DataFrame(scores,columns=['model','best_score','best_params'])
+
+# print(find_best_model(X,y))
+# The GridSearchCV suggests that the best technique is LinearRegression() model.
+
+# so we use the above trained model to predict the values for test data
+
+def predict_price(location,total_sqft,bath,bhk):    
+    loc_index = np.where(X.columns==location)[0][0]
+
+    x = np.zeros(len(X.columns))
+    x[0] = total_sqft
+    x[1] = bath
+    x[2] = bhk
+    if loc_index >= 0:
+        x[loc_index] = 1
+
+    return model.predict([x])[0]
+
+# print(predict_price('1st Phase JP Nagar', 1000, 2, 2))
+# print(predict_price('1st Phase JP Nagar', 1000, 3, 3))
+# print(predict_price('Indira Nagar', 1000, 2, 2))
+# print(predict_price('Indira Nagar', 1000, 3, 3))
+
+# HERE THE MODEL BUILDING PROCESS IS DONE AND WE EXPORT THE MODEL IN A PICKLE FILE.
+import pickle
+with open('Projects\Project-1\Bengaluru_house_price_predict.pickle', 'wb') as f:
+    pickle.dump(model, f)
+
+import json
+columns = {
+    'data_columns': [col.lower() for col in X.columns]
+}
+with open('Projects\Project-1\columns.json', 'w') as f:
+    f.write(json.dumps(columns))
