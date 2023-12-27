@@ -41,3 +41,15 @@ weather_data = [
 df3 = pd.DataFrame(weather_data, columns=['day', 'temperature', 'windspeed', 'event'])
 # while creatint a dataframe froma python tuple, we need to specify the columns in the pd.DataFrame() method.
 print(df3)
+
+
+print('---------------------- New Functions ----------------------------------------------------------------')
+# group by functionality
+df4 = pd.read_csv('.\Pandas\weather_Data.csv')
+grouped = df4.groupby(['city'])
+for city, city_df in grouped:
+    print(city)
+    print(city_df)
+
+# print(grouped.max())
+# print(grouped.describe())
