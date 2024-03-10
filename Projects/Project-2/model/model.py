@@ -75,8 +75,8 @@ def decision_classifier(train_X, train_y, test_X, test_y):
 
 # decision_classifier(train_X, train_y, test_X, test_y)
 
-from sklearn.naive_bayes import MultinomialNB, GaussianNB
 def naive_bayes(train_X, train_y, test_X, test_y):
+    from sklearn.naive_bayes import MultinomialNB, GaussianNB
     from sklearn.metrics import classification_report, confusion_matrix
     model = MultinomialNB()
     model.fit(train_X, train_y)
@@ -85,7 +85,7 @@ def naive_bayes(train_X, train_y, test_X, test_y):
     print("Confusion Matrix: \n", confusion_matrix(test_y, y_pred))
     print("Score: \n", model.score(test_X, test_y))
 
-naive_bayes(train_X, train_y, test_X, test_y)
+# naive_bayes(train_X, train_y, test_X, test_y)
 
 def random_forest(train_X, train_y, test_X, test_y):
     from sklearn.ensemble import RandomForestClassifier
